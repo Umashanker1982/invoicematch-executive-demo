@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@page{size:13.333in 7.5in;margin:0}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#17211c}
+.s{width:13.333in;height:7.5in;padding:0.55in 0.7in;page-break-after:always;position:relative;background:#f7f5ef;overflow:hidden}
+.s:last-child{page-break-after:auto}
+h1{font-size:40pt;margin:0 0 .15in;color:#123d2c}h2{font-size:28pt;margin:0 0 .25in;color:#123d2c}
+.k{font-size:12pt;letter-spacing:.08em;text-transform:uppercase;color:#7a6a3a;margin-bottom:.12in}
+p,li{font-size:17pt;line-height:1.35}ul{margin:.1in 0;padding-left:.3in}
+.ft{position:absolute;bottom:.25in;left:.7in;right:.7in;font-size:10pt;color:#7a7a70;display:flex;justify-content:space-between}
+.dark{background:#123d2c;color:#fff}.dark h1,.dark h2{color:#fff}.dark .k{color:#e5c873}.dark .ft{color:#b9c8bf}
+.row{display:flex;gap:.3in}.col{flex:1}
+.tile{background:#fff;border:1px solid #d9d4c4;border-radius:10px;padding:.2in .25in;flex:1}
+.big{font-size:36pt;font-weight:bold;color:#123d2c}.lab{font-size:13pt;color:#555}
+.box{border-radius:10px;padding:.18in .22in;flex:1;font-size:13.5pt;line-height:1.35}
+.box b{display:block;font-size:16pt;margin-bottom:.08in}
+.g{background:#e3f1e8;border:2px solid #2f7d55}.y{background:#fbf2d8;border:2px solid #b8901d}.r{background:#f8e1df;border:2px solid #b0423a}.m{background:#e6eaf3;border:2px solid #4a5f8f}
+img.sh{width:100%;height:4.3in;object-fit:cover;object-position:top;border:1px solid #ccc;border-radius:6px}
+.flow{display:flex;gap:.12in;align-items:center;margin:.2in 0}.st{background:#fff;border:2px solid #123d2c;border-radius:8px;padding:.12in;font-size:13pt;text-align:center;flex:1}.ar{font-size:20pt;color:#123d2c}
+table{border-collapse:collapse;width:100%;font-size:14pt}td{padding:.07in .1in;border-bottom:1px solid #d9d4c4}td.n{font-weight:bold;color:#123d2c;text-align:right}
+.stamp{display:inline-block;border:4px solid #b8901d;color:#8a6a0e;font-weight:bold;font-size:26pt;padding:.06in .25in;border-radius:6px;transform:rotate(-2deg);background:#fff8e3}
+</style></head><body>
+
+<div class="s dark"><div style="margin-top:1.4in"><div class="k">Executive stakeholder demo · Silverbrook Financial (fictional)</div>
+<h1>InvoiceMatch</h1><p style="font-size:24pt">AI invoice-to-PO matching: from prototype to productized release</p>
+<p style="font-size:16pt;margin-top:.5in">Umashanker, FDE lead · Live product: invoicematch.onrender.com</p></div>
+<div class="ft"><span>Demo 7 min · Workshop 20 min</span><span>1</span></div></div>
+
+<div class="s"><div class="k">The stakeholder problem</div><h2>The AP team is at full capacity, and money is leaking</h2>
+<div class="row"><div class="tile"><div class="big">790 h</div><div class="lab">a month checking PO-backed invoices by hand (6 specialists, all of their time)</div></div>
+<div class="tile"><div class="big">+15%</div><div class="lab">invoice volume expected next year</div></div>
+<div class="tile"><div class="big">$210k</div><div class="lab">lost last year to duplicate payments and overpayments</div></div></div>
+<ul style="margin-top:.35in"><li>Exceptions take days of email between AP and Procurement</li><li>Audit evidence is scattered; Compliance needs every decision explained</li></ul>
+<div class="ft"><span>InvoiceMatch · Executive demo</span><span>2</span></div></div>
+
+<div class="s"><div class="k">Users, goal, and measurable value</div><h2>Half the invoices untouched, with no loss of control</h2>
+<div class="row"><div class="col"><p><b>Target users</b></p><ul><li>AP specialists and AP Manager</li><li>Approvers: Finance Controller, CFO</li><li>Compliance, Internal Audit, Procurement</li></ul>
+<p><b>Product goal</b><br>Routine invoices approve themselves within the existing limits; every exception arrives explained.</p></div>
+<div class="col"><table><tr><td>Manual effort</td><td class="n">−57%</td></tr><tr><td>Hours saved a month</td><td class="n">448</td></tr><tr><td>Net value a year</td><td class="n">about $313k</td></tr><tr><td>Payback</td><td class="n">about 7 months</td></tr><tr><td>AI cost per invoice</td><td class="n">about $0.0002</td></tr></table>
+<p style="font-size:14pt;color:#555">Business-case targets, based on stated assumptions (sample data).</p></div></div>
+<div class="ft"><span>InvoiceMatch · Executive demo</span><span>3</span></div></div>
+
+<div class="s"><div class="k">How it works · the evidence</div><h2>AI reads. Rules decide. People approve.</h2>
+<div class="flow"><div class="st">Invoice</div><div class="ar">→</div><div class="st">Remove bank details</div><div class="ar">→</div><div class="st"><b>Claude reads</b><br>via SharedLLM</div><div class="ar">→</div><div class="st">10 written checks vs PO + contract</div><div class="ar">→</div><div class="st">Approval limits route it</div><div class="ar">→</div><div class="st">Audit log</div></div>
+<div class="row" style="margin-top:.3in"><div class="tile"><div class="big">100%</div><div class="lab">field accuracy on 40 sample invoices, including 12 unseen layouts</div></div>
+<div class="tile"><div class="big">40/40</div><div class="lab">correct decisions</div></div>
+<div class="tile"><div class="big">0</div><div class="lab">wrong automatic approvals (a release gate: any wrong approval fails the build)</div></div>
+<div class="tile"><div class="big">39%</div><div class="lab">what the old rules reader got on new layouts, which is why we use AI</div></div></div>
+<div class="ft"><span>InvoiceMatch · Executive demo</span><span>4</span></div></div>
+
+<div class="s"><div class="k">Live demo · the most important workflow (backup screenshots)</div><h2>Routine invoices approve themselves; problems arrive explained</h2>
+<div class="row"><div class="col"><img class="sh" src="docs/screenshots/new-layout.png"><p style="font-size:13pt">A layout the old rules can't read: Claude reads it, all 10 checks pass, auto-approved under $10k</p></div>
+<div class="col"><img class="sh" src="docs/screenshots/price-mismatch.png"><p style="font-size:13pt">14% above the contract price: sent to a person with the exact line and difference</p></div></div>
+<div class="ft"><span>InvoiceMatch · Executive demo</span><span>5</span></div></div>
+
+<div class="s"><div class="k">Live demo · control (backup screenshots)</div><h2>Limits are enforced by the system; every action is evidence</h2>
+<div class="row"><div class="col"><img class="sh" src="docs/screenshots/review-queue.png"><p style="font-size:13pt">Review queue: only the right role can approve; overrides need a written reason</p></div>
+<div class="col"><img class="sh" src="docs/screenshots/audit-log.png"><p style="font-size:13pt">Audit log: editing an old record breaks the chain and is detected</p></div></div>
+<div class="ft"><span>InvoiceMatch · Executive demo</span><span>6</span></div></div>
+
+<div class="s"><div class="k">Honest status</div><h2>Complete, incomplete, risky, and still manual</h2>
+<div class="row"><div class="box g"><b>Complete</b>AI reading via SharedLLM · 10 matching rules · approval routing · review queue with roles · tamper-evident audit log · benchmark + CI safety gates</div>
+<div class="box y"><b>Incomplete</b>Real ERP connection (simulated) · mailbox / e-invoice intake · company single sign-on · PDF and scanned invoices · production database</div></div>
+<div class="row" style="margin-top:.2in"><div class="box r"><b>Risky</b>Accuracy on real vendor layouts unproven · staff job fears · AI gateway dependency · prompt injection in invoice text</div>
+<div class="box m"><b>Still manual</b>Every exception · approvals above $10k · bank-change verification by phone · contract price updates · weekly audit sample</div></div>
+<div class="ft"><span>InvoiceMatch · Executive demo</span><span>7</span></div></div>
+
+<div class="s"><div class="k">Recommendation</div><div class="stamp">LAUNCH WITH CONDITIONS</div>
+<p style="margin-top:.25in">A <b>12-week pilot</b> with 10 vendors, starting in <b>shadow mode</b> (no automatic approvals). Auto-approval is switched on only when:</p>
+<div class="row"><div class="tile"><b>C-1</b><div class="lab">InfoSec review of egress, gateway, and secrets passed</div></div>
+<div class="tile"><b>C-2</b><div class="lab">Shadow mode on real invoices: ≥ 97% accuracy, 0 wrong would-be approvals, ≥ 98% agreement for 2 weeks</div></div>
+<div class="tile"><b>C-3</b><div class="lab">Outage and wrong-approval drills passed with the runbook only</div></div></div>
+<p style="margin-top:.3in"><b>Decisions needed today:</b> approve the pilot · publish the CFO statement on jobs · fund the ERP connector</p>
+<div class="ft"><span>InvoiceMatch · Executive demo · Workshop next</span><span>8</span></div></div>
+</body></html>
